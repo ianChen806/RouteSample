@@ -5,11 +5,7 @@ namespace RouteSample.Controllers
 {
     public class MyConstraint : IRouteConstraint
     {
-        public bool Match(HttpContext httpContext,
-                          IRouter route,
-                          string routeKey,
-                          RouteValueDictionary values,
-                          RouteDirection routeDirection)
+        public bool Match(HttpContext httpContext, IRouter route, string routeKey, RouteValueDictionary values, RouteDirection routeDirection)
         {
             if (routeDirection == RouteDirection.IncomingRequest)
             {

@@ -88,5 +88,11 @@ namespace RouteSample.Controllers
             });
             return pathByAction;
         }
+
+        [NonAction]
+        public string Value8([FromServices] LinkGenerator generator)
+        {
+            return "ok";
+        }
     }
 }
