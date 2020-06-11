@@ -70,5 +70,12 @@ namespace RouteSample.Controllers
         {
             return name;
         }
+
+        [Route("{name:MyRouteConstraint}")]
+        [HttpGet]
+        public string Value6(string name)
+        {
+            return name;
+        }
     }
 }
