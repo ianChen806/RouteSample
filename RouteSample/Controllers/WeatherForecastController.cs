@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Logging;
 
 namespace RouteSample.Controllers
@@ -76,6 +77,16 @@ namespace RouteSample.Controllers
         public string Value6(string name)
         {
             return name;
+        }
+
+        [HttpGet]
+        public string Value7([FromServices] LinkGenerator generator)
+        {
+            var pathByAction = generator.GetPathByAction(HttpContext, "Value2", "WeatherForecast", new
+            {
+                id = 5
+            });
+            return pathByAction;
         }
     }
 }
