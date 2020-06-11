@@ -35,5 +35,40 @@ namespace RouteSample.Controllers
                              })
                              .ToArray();
         }
+
+        [Route("{id:int}")]
+        [HttpGet]
+        public int Value(int id)
+        {
+            return id;
+        }
+
+        [Route("{id:max(10)}")]
+        [HttpGet]
+        public int Value2(int id)
+        {
+            return id;
+        }
+
+        [Route("{id:regex(^\\d{{3}}-\\d{{2}}-\\d{{4}}$)}")]
+        [HttpGet]
+        public string Value3(string id)
+        {
+            return id;
+        }
+
+        [Route("{name:required}")]
+        [HttpGet]
+        public string Value4(string name)
+        {
+            return name;
+        }
+
+        [Route("{*name}")]
+        [HttpGet]
+        public string Value5(string name)
+        {
+            return name;
+        }
     }
 }
